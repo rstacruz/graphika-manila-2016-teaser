@@ -6,9 +6,16 @@
 $color: #4ccfdd;
 $color2: #005f99;
 
+@mixin transform($value) {
+  -webkit-transform: $value;
+  -moz-transform: $value;
+  -ms-transform: $value;
+  transform: $value;
+}
+
 @mixin tablet-perspective($x, $y, $z, $depth, $text, $edge) {
   color: $text;
-  transform: perspective(10000px) rotateY(25deg) rotateX(50deg) rotateZ(-25deg) scale(1) translate3d($x, $y, $z);
+  @include transform(perspective(10000px) rotateY(25deg) rotateX(50deg) rotateZ(-25deg) scale(1) translate3d($x, $y, $z));
   text-shadow:
     1px -1px 0 lighten($text, 20%),
     -1px 1px 0 mix($edge, $text, 70%),
@@ -32,7 +39,7 @@ html {
   color: white;
   padding: 20px;
   text-align: center;
-  padding-bottom: 100px;
+  padding-bottom: 64px;
 }
 
 * {
@@ -82,7 +89,7 @@ html {
   }
   
   .num, .subtext {
-    transform: translate3d(10px, -10px, 0);
+    @include transform(translate3d(10px, -10px, 0));
   }
   
   .num {
@@ -139,7 +146,7 @@ html {
   }
 
   .date-element {
-    transform: scale(0.6);
+    @include transform(scale(0.6));
     margin-bottom: -32px;
   }
 
