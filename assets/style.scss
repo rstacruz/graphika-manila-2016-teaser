@@ -67,7 +67,7 @@ html {
   & {
     position: relative;
     margin: 0 auto;
-    width: 400px;
+    max-width: 400px;
     height: 195px;
     text-align: center;
     line-height: 1.4;
@@ -195,6 +195,7 @@ html {
     text-align: center;
     width: 100%;
     margin-top: 24px;
+    overflow: hidden;
   }
 
   li {
