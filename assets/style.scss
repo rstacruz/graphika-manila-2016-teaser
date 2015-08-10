@@ -1,0 +1,123 @@
+---
+---
+
+@import 'normalize';
+
+$color: #4ccfdd;
+$color2: #005f99;
+
+@mixin tablet-perspective($x, $y, $z, $depth, $text, $edge) {
+  color: $text;
+  transform: perspective(10000px) rotateY(25deg) rotateX(50deg) rotateZ(-25deg) scale(1) translate3d($x, $y, $z);
+  text-shadow:
+    1px -1px 0 lighten($text, 20%),
+    -1px 1px 0 mix($edge, $text, 70%),
+    -2px 2px 0 mix($edge, $text, 80%),
+    -3px 3px 0 mix($edge, $text, 90%),
+    (-1 * $depth) $depth ($depth * 1) rgba($edge, .4);
+}
+
+html, body {
+  height: 100%;
+}
+
+html {
+  background: $color;
+  background: linear-gradient(to bottom, darken($color, 10%), $color2) center center / auto fixed;
+  background: radial-gradient(farthest-corner at 50% 10%, darken($color, 10%), $color2) center center / auto fixed;
+  font-family: avenir next, sans-serif;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+* {
+  cursor: default;
+}
+
+.days {
+  margin: 0 auto;
+  position: relative;
+
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  .date-element {
+    &:nth-child(1) { z-index: 4; }
+    &:nth-child(2) { z-index: 3; opacity: 0.9; }
+    &:nth-child(3) { z-index: 2; opacity: 0.7; }
+    &:nth-child(4) { z-index: 1; opacity: 0.5; }
+  }
+}
+
+.date-element {
+  & {
+    position: relative;
+    margin: 0 auto;
+    width: 400px;
+    height: 195px;
+    text-align: center;
+    line-height: 1.4;
+  }
+  
+  .num, .subtext {
+    display: block;
+  }
+  
+  .in {
+    @include tablet-perspective(-7%, 0, 0, 30px, lighten($color, 10%), darken($color2, 10%));
+    border: solid 1px rgba(lighten($color, .2), .5);
+    box-shadow:
+      -1px 1px 0 rgba(darken($color, 10%), .3),
+      -2px 2px 0 rgba(darken($color2, 20%), .15);
+    background: linear-gradient(195deg, rgba($color, 0) 50%, rgba(lighten($color, .40), .05));
+    border-radius: 5px;
+    padding: 24px;
+    margin: 0 auto;
+  }
+  
+  .num, .subtext {
+    transform: translate3d(10px, -10px, 0);
+  }
+  
+  .num {
+    font-size: 128px;
+    font-family: fjalla one;
+    font-weight: 400;
+    letter-spacing: 8px;
+    text-indent: 2px;
+    line-height: 1em;
+  }
+  
+  .subtext {
+    font-size: 32px;
+    text-transform: uppercase;
+    font-family: fjalla one;
+    font-weight: 400;
+    letter-spacing: 6px;
+  }
+}
+
+.date-element.-big {
+  & { height: 165px; }
+  .in { width: 260px; }
+  .num { color: lighten($color, 20%); }
+  .subtext { color: lighten($color, 20%); }
+}
+
+.date-element.-small {
+  & { height: 85px; }
+  .in { width: 130px; height: 85px; }
+  .in {
+    @include tablet-perspective(0, 0, 0, 15px, lighten($color, 5%), darken($color2, 5%));
+    text-indent: -10px;
+  }
+  .num { font-size: 64px; }
+  .subtext { font-size: 16px; }
+}
+
+@media (max-width: 768px) {
+  .days {
+    transform: scale(0.6);
+  }
+}
