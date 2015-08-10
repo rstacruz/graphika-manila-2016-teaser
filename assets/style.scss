@@ -26,7 +26,7 @@ html {
   background: $color;
   background: linear-gradient(to bottom, darken($color, 10%), $color2) center center / auto fixed;
   background: radial-gradient(farthest-corner at 50% 10%, darken($color, 10%), $color2) center center / auto fixed;
-  background: url('http://www.graphikamanila.com/splash2016/images/background.jpg') center center / cover fixed;
+  background: url('./images/background.jpg') center center / cover fixed;
   font-family: work sans, sans-serif;
   color: white;
   padding: 20px;
