@@ -77,9 +77,11 @@
     };
 })(jQuery);
 
-$('[role="countdown"]').countdown({
-  until: new Date(2016, 0, 30),
-  update: function (type, num) {
-    $('[role="' + type + '"]').text(num)
-  }
+$(function () {
+  $('[role="countdown"]').countdown({
+    until: new Date(2016, 0, 30, 9, 00),
+    update: function (type, num) {
+      $('[role="' + type + '"]').text(num)
+    }
+  })
 })
