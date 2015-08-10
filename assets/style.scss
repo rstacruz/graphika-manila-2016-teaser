@@ -45,13 +45,13 @@ html {
   position: relative;
 
   padding-top: 56px;
-  padding-bottom: 40px;
+  padding-bottom: 48px;
 
   .date-element {
-    &:nth-child(1) { z-index: 4; }
-    &:nth-child(2) { z-index: 3; opacity: 0.9; }
-    &:nth-child(3) { z-index: 2; opacity: 0.7; }
-    &:nth-child(4) { z-index: 1; opacity: 0.5; }
+    &:nth-child(1) { z-index: 4; opacity: 0.5; }
+    &:nth-child(2) { z-index: 3; opacity: 0.7; }
+    &:nth-child(3) { z-index: 2; opacity: 0.9; }
+    &:nth-child(4) { z-index: 1; }
   }
 }
 
@@ -71,11 +71,10 @@ html {
   
   .in {
     @include tablet-perspective(-7%, 0, 0, 30px, lighten($color, 10%), darken($color2, 10%));
-    border: solid 1px rgba(lighten($color, .2), .5);
+    background: linear-gradient(195deg, rgba($color, .1) 50%, rgba(lighten($color, .40), .35));
     box-shadow:
-      -1px 1px 0 rgba(darken($color, 10%), .3),
-      -2px 2px 0 rgba(darken($color2, 20%), .15);
-    background: linear-gradient(195deg, rgba($color, 0) 50%, rgba(lighten($color, .40), .05));
+      -1px 1px 0 rgba($color, .6),
+      -5px 5px 15px rgba(lighten($color, 10%), .1);
     border-radius: 5px;
     padding: 24px;
     margin: 0 auto;
@@ -105,16 +104,18 @@ html {
 
 .date-element.-big {
   & { height: 165px; }
+  & { margin-top: -30px; }
   .in { width: 260px; }
   .num { color: lighten($color, 20%); }
   .subtext { color: lighten($color, 20%); }
 }
 
 .date-element.-small {
-  & { height: 85px; }
+  & { height: 95px; }
+  & { left: -10px; }
   .in { width: 130px; height: 85px; }
   .in {
-    @include tablet-perspective(0, 0, 0, 15px, lighten($color, 5%), darken($color2, 5%));
+    @include tablet-perspective(0, 0, 0, 10px, lighten($color, 5%), darken($color2, 5%));
     text-indent: -10px;
   }
   .num { font-size: 64px; }
@@ -132,7 +133,8 @@ html {
 
   .days {
     padding-bottom: 64px;
-    padding-top: 32px;
+    padding-top: 8px;
+    left: -40px;
   }
 
   .date-element {
@@ -141,6 +143,7 @@ html {
   }
 
   .date-element.-big {
+    margin-top: -64px;
     margin-bottom: -48px;
   }
 }
