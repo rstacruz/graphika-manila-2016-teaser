@@ -25,6 +25,7 @@ html {
   background: $color;
   background: linear-gradient(to bottom, darken($color, 10%), $color2) center center / auto fixed;
   background: radial-gradient(farthest-corner at 50% 10%, darken($color, 10%), $color2) center center / auto fixed;
+  background: url('http://www.graphikamanila.com/splash2016/images/background.jpg');
   font-family: avenir next, sans-serif;
   color: white;
   padding: 20px;
@@ -33,6 +34,9 @@ html {
 
 * {
   cursor: default;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .days {
@@ -119,5 +123,32 @@ html {
 @media (max-width: 768px) {
   .days {
     transform: scale(0.6);
+  }
+}
+
+.branding {
+  margin: 0 auto;
+}
+
+.info-boxes {
+  & {
+    margin: 32px auto;
+  }
+}
+.info-box {
+  & + & {
+    margin-top: 16px;
+  }
+
+  .title {
+    display: block;
+    color: white;
+    font-weight: bold;
+  }
+
+  .sub {
+    display: block;
+    color: lighten($color, 20%);
+    font-size: 0.9em;
   }
 }
