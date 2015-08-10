@@ -31,10 +31,10 @@ html, body {
 }
 
 html {
-  background: $color;
-  background: linear-gradient(to bottom, darken($color, 10%), $color2) center center / auto fixed;
-  background: radial-gradient(farthest-corner at 50% 10%, darken($color, 10%), $color2) center center / auto fixed;
-  background: url('./images/background.jpg') center center / cover fixed;
+  background:
+    -webkit-linear-gradient(293deg, rgba($color, 0) 45%, rgba($color, .1) 45%), url('./images/background.jpg') center center / cover fixed, $color;  background:
+    linear-gradient(157deg, rgba($color, 0) 45%, rgba($color, .1) 45%),
+    url('./images/background.jpg') center center / cover fixed, $color;
   font-family: work sans, sans-serif;
   color: white;
   padding: 20px;
