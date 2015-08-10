@@ -24,22 +24,24 @@ $color2: #005f99;
     (-1 * $depth) $depth ($depth * 1) rgba($edge, .4);
 }
 
-html, body {
-  height: 100%;
-  line-height: 1.55;
+html, body, #all {
+  min-height: 100%;
   cursor: default;
 }
 
 html {
-  background:
-    -webkit-linear-gradient(293deg, rgba($color, 0) 45%, rgba($color, .1) 45%), url('./images/background.jpg') center center / cover fixed, $color;  background:
-    linear-gradient(157deg, rgba($color, 0) 45%, rgba($color, .1) 45%),
-    url('./images/background.jpg') center center / cover fixed, $color;
+  line-height: 1.55;
   font-family: work sans, sans-serif;
+  background: $color;
   color: white;
-  padding: 20px;
   text-align: center;
-  padding-bottom: 64px;
+}
+
+#all {
+  background:
+    linear-gradient(157deg, rgba($color, 0) 50%, rgba($color, .1) 50%, rgba($color, .15) 85%, rgba($color, .3) 85%) center center / 100% 100%,
+    url('./images/background.jpg') center center / 100% 100%, $color2;
+  padding: 20px;
 }
 
 * {
@@ -52,7 +54,7 @@ html {
   margin: 0 auto;
   position: relative;
 
-  padding-top: 56px;
+  padding-top: 48px;
   padding-bottom: 48px;
 
   .date-element {
