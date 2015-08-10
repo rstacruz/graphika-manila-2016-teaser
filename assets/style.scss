@@ -19,6 +19,7 @@ $color2: #005f99;
 
 html, body {
   height: 100%;
+  line-height: 1.55;
 }
 
 html {
@@ -26,7 +27,7 @@ html {
   background: linear-gradient(to bottom, darken($color, 10%), $color2) center center / auto fixed;
   background: radial-gradient(farthest-corner at 50% 10%, darken($color, 10%), $color2) center center / auto fixed;
   background: url('http://www.graphikamanila.com/splash2016/images/background.jpg') center center / cover fixed;
-  font-family: avenir next, sans-serif;
+  font-family: work sans, sans-serif;
   color: white;
   padding: 20px;
   text-align: center;
@@ -43,8 +44,8 @@ html {
   margin: 0 auto;
   position: relative;
 
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 56px;
+  padding-bottom: 40px;
 
   .date-element {
     &:nth-child(1) { z-index: 4; }
@@ -121,8 +122,26 @@ html {
 }
 
 @media (max-width: 768px) {
+  body {
+    font-size: 13px;
+  }
+
+  .branding img {
+    max-width: 200px;
+  }
+
   .days {
+    padding-bottom: 64px;
+    padding-top: 32px;
+  }
+
+  .date-element {
     transform: scale(0.6);
+    margin-bottom: -32px;
+  }
+
+  .date-element.-big {
+    margin-bottom: -48px;
   }
 }
 
@@ -148,7 +167,7 @@ html {
 
   .sub {
     display: block;
-    color: lighten($color, 20%);
+    color: darken($color2, 10%);
     font-size: 0.9em;
   }
 }
