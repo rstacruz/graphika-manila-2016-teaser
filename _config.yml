@@ -14,12 +14,10 @@ exclude:
   - Gemfile.lock
   - vendor
   - CNAME
-sass:
-  style: compressed
 
 # Site info
-url: "http://siteurl.com"
-title: "Site name"
+url: "http://graphikamanila.com"
+title: "Graphika Manila"
 
 # Google analytics
 analytics:

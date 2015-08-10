@@ -20,6 +20,7 @@ $color2: #005f99;
 html, body {
   height: 100%;
   line-height: 1.55;
+  cursor: default;
 }
 
 html {
@@ -31,10 +32,10 @@ html {
   color: white;
   padding: 20px;
   text-align: center;
+  padding-bottom: 100px;
 }
 
 * {
-  cursor: default;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -134,7 +135,7 @@ html {
   .days {
     padding-bottom: 64px;
     padding-top: 8px;
-    left: -40px;
+    // left: -40px;
   }
 
   .date-element {
@@ -154,9 +155,10 @@ html {
 
 .info-boxes {
   & {
-    margin: 32px auto;
+    margin: 32px auto 0 auto;
   }
 }
+
 .info-box {
   & + & {
     margin-top: 16px;
@@ -172,5 +174,87 @@ html {
     display: block;
     color: darken($color2, 10%);
     font-size: 0.9em;
+  }
+}
+
+.social-list {
+  &, li {
+    margin: 0;
+    padding: 0;
+  }
+
+  & {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    display: inline-block;
+    padding: 6px;
+    text-align: center;
+    box-shadow: none;
+  }
+
+  a:before, a:after {
+    transition: all 100ms linear;
+  }
+
+  .text {
+    display: none;
+  }
+
+  a:before {
+    font-family: 'Ionicons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    text-align: center;
+    border: solid 2px transparent;
+    border-radius: 50%;
+  }
+
+  @mixin socialiconify($color, $content, $filled) {
+    & {
+      color: white;
+      cursor: pointer;
+    }
+
+    &:hover,
+    &:focus {
+      color: $color;
+    }
+
+    &:before {
+      content: $filled;
+    }
+
+    &:hover:before,
+    &:focus:before {
+      background: $color;
+      color: white;
+      content: $filled;
+    }
+  }
+
+  .facebook a {
+    @include socialiconify(#4c66a4, '\f230', '\f231');
+  }
+
+  .twitter a {
+    @include socialiconify(dodgerblue, '\f242', '\f243');
+  }
+
+  .googleplus a {
+    @include socialiconify(#f53, '\f234', '\f235');
   }
 }
