@@ -39,6 +39,8 @@ html {
 
 #all {
   background:
+    -webkit-linear-gradient(293deg, rgba($color, 0) 50%, rgba($color, .1) 50%, rgba($color, .15) 89%, rgba($color, .3) 89%) center center / 100% 100%, url('./images/background.jpg') center center / 100% 100%, $color2;
+  background:
     linear-gradient(157deg, rgba($color, 0) 50%, rgba($color, .1) 50%, rgba($color, .15) 89%, rgba($color, .3) 89%) center center / 100% 100%,
     url('./images/background.jpg') center center / 100% 100%, $color2;
   padding: 20px;
